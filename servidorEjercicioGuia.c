@@ -5,7 +5,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <stdio.h>
-
+#include <ctype.h>
 
 
 int main(int argc, char *argv[])
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	// INICIALITZACIONS
 	// Obrim el socket
 	if ((sock_listen = socket(AF_INET, SOCK_STREAM, 0)) < 0)
-		printf("Error creant socket");
+		printf("Error creant socket\n");
 	// Fem el bind al port
 	
 	
@@ -29,12 +29,12 @@ int main(int argc, char *argv[])
 	//htonl formatea el numero que recibe al formato necesario
 	serv_adr.sin_addr.s_addr = htonl(INADDR_ANY);
 	// establecemos el puerto de escucha
-	serv_adr.sin_port = htons(9050);
+	serv_adr.sin_port = htons(9070);
 	if (bind(sock_listen, (struct sockaddr *) &serv_adr, sizeof(serv_adr)) < 0)
-		printf ("Error al bind");
+		printf ("Error al bind\n");
 	
 	if (listen(sock_listen, 3) < 0)
-		printf("Error en el Listen");
+		printf("Error en el Listen\n");
 	
 	int i;
 	// Bucle infinito
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 		printf ("Escuchando\n");
 		
 		sock_conn = accept(sock_listen, NULL, NULL);
-		printf ("He recibido conexion\n");
+	printf ("He recibido conexion\n");
 		//sock_conn es el socket que usaremos para este cliente
 		
 		int terminar =0;
@@ -66,14 +66,14 @@ int main(int argc, char *argv[])
 			int codigo =  atoi (p);
 			// Ya tenemos el c?digo de la petici?n
 			char nombre[20];
-			
+			float temperatura;
 			if (codigo !=0)
 			{
 				p = strtok( NULL, "/");
 
 				strcpy (nombre, p);
 				// Ya tenemos el nombre
-				printf ("Codigo: %d, Nombre: %s\n", codigo, nombre);
+				printf ("Codigo: %d, Nombre/Palabra: %s\n", codigo, nombre);
 			}
 			
 			if (codigo ==0) //petici?n de desconexi?n
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
 					strcpy (respuesta,"NO");
 			else if (codigo == 3)
 			{	//quiere saber si es alto
-			
+				
 				p = strtok( NULL, "/");
 				float altura =  atof (p);
 				if (altura > 1.70)
@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
 				temperatura = ((atof(p) - 32)*5)/9;
 				sprintf (respuesta,"%f", temperatura);
 			}
-			else //codigo == 6
+			else if (codigo == 6)
 			{	// es palindromo
 				strcpy (nombre, p); // sera una palabra
 				int longitud = strlen(nombre);
@@ -114,6 +114,11 @@ int main(int argc, char *argv[])
 					strcpy (respuesta,"SI");
 				int inicio = 0;
 				int fin = longitud -1;
+				// convertimos la palabra a mayusculas
+				for (int i = 0;i<strlen(nombre); ++i)
+				{
+					nombre[i] =toupper(nombre[i]);
+				}
 				while (nombre[inicio]== nombre[fin])
 				{
 					if (inicio >= fin)
@@ -123,9 +128,17 @@ int main(int argc, char *argv[])
 				}
 				if (strcmp(respuesta, "SI")!=0)
 					strcpy (respuesta,"NO");
-			}	
-
+			}
+			else //codigo == 7
+			{	//convertir palabra a mayusculas
+				strcpy (nombre, p); // sera una palabra
+				for (int i = 0;i<strlen(nombre); ++i)
+				{
+					nombre[i] = toupper(nombre[i]);
+				}
+				sprintf (respuesta,"%s", nombre);
 				
+			}
 			if (codigo !=0)
 			{
 				
@@ -138,3 +151,5 @@ int main(int argc, char *argv[])
 		close(sock_conn); 
 	}
 }
+
+			

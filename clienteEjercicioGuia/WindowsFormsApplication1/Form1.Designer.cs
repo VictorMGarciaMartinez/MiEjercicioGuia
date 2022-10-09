@@ -33,15 +33,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ConvertirMayus = new System.Windows.Forms.RadioButton();
+            this.PalabraPalindromo = new System.Windows.Forms.RadioButton();
+            this.aCentigrados = new System.Windows.Forms.RadioButton();
+            this.aFahrenheit = new System.Windows.Forms.RadioButton();
             this.Longitud = new System.Windows.Forms.RadioButton();
             this.altura = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.numeroBox = new System.Windows.Forms.TextBox();
             this.Bonito = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
-            this.aFahrenheit = new System.Windows.Forms.RadioButton();
-            this.aCentigrados = new System.Windows.Forms.RadioButton();
-            this.PalabraPalindromo = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             // palabra_box
             // 
             this.palabra_box.Location = new System.Drawing.Point(155, 38);
-            this.palabra_box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.palabra_box.Margin = new System.Windows.Forms.Padding(4);
             this.palabra_box.Name = "palabra_box";
             this.palabra_box.Size = new System.Drawing.Size(217, 22);
             this.palabra_box.TabIndex = 3;
@@ -68,7 +69,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(33, 49);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(199, 38);
             this.button1.TabIndex = 4;
@@ -79,7 +80,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(155, 296);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 5;
@@ -90,6 +91,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.groupBox1.Controls.Add(this.ConvertirMayus);
             this.groupBox1.Controls.Add(this.PalabraPalindromo);
             this.groupBox1.Controls.Add(this.aCentigrados);
             this.groupBox1.Controls.Add(this.aFahrenheit);
@@ -102,19 +104,67 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.palabra_box);
             this.groupBox1.Location = new System.Drawing.Point(31, 128);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(484, 365);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Peticion";
             // 
+            // ConvertirMayus
+            // 
+            this.ConvertirMayus.AutoSize = true;
+            this.ConvertirMayus.Location = new System.Drawing.Point(155, 257);
+            this.ConvertirMayus.Margin = new System.Windows.Forms.Padding(4);
+            this.ConvertirMayus.Name = "ConvertirMayus";
+            this.ConvertirMayus.Size = new System.Drawing.Size(228, 21);
+            this.ConvertirMayus.TabIndex = 13;
+            this.ConvertirMayus.TabStop = true;
+            this.ConvertirMayus.Text = "Convertir palabra a mayúsculas";
+            this.ConvertirMayus.UseVisualStyleBackColor = true;
+            // 
+            // PalabraPalindromo
+            // 
+            this.PalabraPalindromo.AutoSize = true;
+            this.PalabraPalindromo.Location = new System.Drawing.Point(155, 228);
+            this.PalabraPalindromo.Margin = new System.Windows.Forms.Padding(4);
+            this.PalabraPalindromo.Name = "PalabraPalindromo";
+            this.PalabraPalindromo.Size = new System.Drawing.Size(250, 21);
+            this.PalabraPalindromo.TabIndex = 12;
+            this.PalabraPalindromo.TabStop = true;
+            this.PalabraPalindromo.Text = "Dime si mi palabra es un palídromo";
+            this.PalabraPalindromo.UseVisualStyleBackColor = true;
+            // 
+            // aCentigrados
+            // 
+            this.aCentigrados.AutoSize = true;
+            this.aCentigrados.Location = new System.Drawing.Point(155, 199);
+            this.aCentigrados.Margin = new System.Windows.Forms.Padding(4);
+            this.aCentigrados.Name = "aCentigrados";
+            this.aCentigrados.Size = new System.Drawing.Size(177, 21);
+            this.aCentigrados.TabIndex = 11;
+            this.aCentigrados.TabStop = true;
+            this.aCentigrados.Text = "Temperatura de F a ºC ";
+            this.aCentigrados.UseVisualStyleBackColor = true;
+            // 
+            // aFahrenheit
+            // 
+            this.aFahrenheit.AutoSize = true;
+            this.aFahrenheit.Location = new System.Drawing.Point(155, 170);
+            this.aFahrenheit.Margin = new System.Windows.Forms.Padding(4);
+            this.aFahrenheit.Name = "aFahrenheit";
+            this.aFahrenheit.Size = new System.Drawing.Size(173, 21);
+            this.aFahrenheit.TabIndex = 10;
+            this.aFahrenheit.TabStop = true;
+            this.aFahrenheit.Text = "Temperatura de ºC a F";
+            this.aFahrenheit.UseVisualStyleBackColor = true;
+            // 
             // Longitud
             // 
             this.Longitud.AutoSize = true;
             this.Longitud.Location = new System.Drawing.Point(155, 112);
-            this.Longitud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Longitud.Margin = new System.Windows.Forms.Padding(4);
             this.Longitud.Name = "Longitud";
             this.Longitud.Size = new System.Drawing.Size(220, 21);
             this.Longitud.TabIndex = 7;
@@ -125,8 +175,8 @@
             // altura
             // 
             this.altura.AutoSize = true;
-            this.altura.Location = new System.Drawing.Point(155, 146);
-            this.altura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.altura.Location = new System.Drawing.Point(155, 141);
+            this.altura.Margin = new System.Windows.Forms.Padding(4);
             this.altura.Name = "altura";
             this.altura.Size = new System.Drawing.Size(128, 21);
             this.altura.TabIndex = 7;
@@ -147,7 +197,7 @@
             // numeroBox
             // 
             this.numeroBox.Location = new System.Drawing.Point(20, 135);
-            this.numeroBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numeroBox.Margin = new System.Windows.Forms.Padding(4);
             this.numeroBox.Name = "numeroBox";
             this.numeroBox.Size = new System.Drawing.Size(81, 22);
             this.numeroBox.TabIndex = 9;
@@ -156,7 +206,7 @@
             // 
             this.Bonito.AutoSize = true;
             this.Bonito.Location = new System.Drawing.Point(155, 84);
-            this.Bonito.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bonito.Margin = new System.Windows.Forms.Padding(4);
             this.Bonito.Name = "Bonito";
             this.Bonito.Size = new System.Drawing.Size(207, 21);
             this.Bonito.TabIndex = 8;
@@ -168,49 +218,13 @@
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(36, 501);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(196, 65);
             this.button3.TabIndex = 10;
             this.button3.Text = "desconectar";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // aFahrenheit
-            // 
-            this.aFahrenheit.AutoSize = true;
-            this.aFahrenheit.Location = new System.Drawing.Point(155, 175);
-            this.aFahrenheit.Margin = new System.Windows.Forms.Padding(4);
-            this.aFahrenheit.Name = "aFahrenheit";
-            this.aFahrenheit.Size = new System.Drawing.Size(173, 21);
-            this.aFahrenheit.TabIndex = 10;
-            this.aFahrenheit.TabStop = true;
-            this.aFahrenheit.Text = "Temperatura de ºC a F";
-            this.aFahrenheit.UseVisualStyleBackColor = true;
-            // 
-            // aCentigrados
-            // 
-            this.aCentigrados.AutoSize = true;
-            this.aCentigrados.Location = new System.Drawing.Point(155, 204);
-            this.aCentigrados.Margin = new System.Windows.Forms.Padding(4);
-            this.aCentigrados.Name = "aCentigrados";
-            this.aCentigrados.Size = new System.Drawing.Size(177, 21);
-            this.aCentigrados.TabIndex = 11;
-            this.aCentigrados.TabStop = true;
-            this.aCentigrados.Text = "Temperatura de F a ºC ";
-            this.aCentigrados.UseVisualStyleBackColor = true;
-            // 
-            // PalabraPalindromo
-            // 
-            this.PalabraPalindromo.AutoSize = true;
-            this.PalabraPalindromo.Location = new System.Drawing.Point(155, 233);
-            this.PalabraPalindromo.Margin = new System.Windows.Forms.Padding(4);
-            this.PalabraPalindromo.Name = "PalabraPalindromo";
-            this.PalabraPalindromo.Size = new System.Drawing.Size(250, 21);
-            this.PalabraPalindromo.TabIndex = 12;
-            this.PalabraPalindromo.TabStop = true;
-            this.PalabraPalindromo.Text = "Dime si mi palabra es un palídromo";
-            this.PalabraPalindromo.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -220,7 +234,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -246,6 +260,7 @@
         private System.Windows.Forms.RadioButton PalabraPalindromo;
         private System.Windows.Forms.RadioButton aCentigrados;
         private System.Windows.Forms.RadioButton aFahrenheit;
+        private System.Windows.Forms.RadioButton ConvertirMayus;
     }
 }
 
