@@ -55,7 +55,7 @@ namespace WindowsFormsApplication1
         {
             if (Longitud.Checked)
             {
-                string mensaje = "1/" + nombre.Text;
+                string mensaje = "1/" + palabra_box.Text;
                 // Enviamos al servidor el nombre tecleado
                 byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
                 server.Send(msg);
@@ -63,12 +63,12 @@ namespace WindowsFormsApplication1
                 //Recibimos la respuesta del servidor
                 byte[] msg2 = new byte[80];
                 server.Receive(msg2);
-                mensaje = Encoding.ASCII.GetString(msg2).Split ('\0')[0];
+                mensaje = Encoding.ASCII.GetString(msg2).Split('\0')[0];
                 MessageBox.Show("La longitud de tu nombre es: " + mensaje);
             }
             else if (Bonito.Checked)
             {
-                string mensaje = "2/" + nombre.Text;
+                string mensaje = "2/" + palabra_box.Text;
                 // Enviamos al servidor el nombre tecleado
                 byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
                 server.Send(msg);
@@ -85,10 +85,10 @@ namespace WindowsFormsApplication1
                     MessageBox.Show("Tu nombre NO bonito. Lo siento.");
 
             }
-            else
+            else if (altura.Checked)
             {
                 // Enviamos nombre y altura
-                string mensaje = "3/" + nombre.Text + "/" + alturaBox.Text;
+                string mensaje = "3/" + palabra_box.Text + "/" + numeroBox.Text;
                 // Enviamos al servidor el nombre tecleado
                 byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
                 server.Send(msg);
@@ -99,8 +99,49 @@ namespace WindowsFormsApplication1
                 mensaje = Encoding.ASCII.GetString(msg2).Split('\0')[0];
                 MessageBox.Show(mensaje);
             }
-             
-        
+            else if (aFahrenheit.Checked)
+            {
+                // Enviamos nombre y altura
+                string mensaje = "4/" + numeroBox.Text;
+                // Enviamos al servidor el nombre tecleado
+                byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
+                server.Send(msg);
+
+                //Recibimos la respuesta del servidor
+                byte[] msg2 = new byte[80];
+                server.Receive(msg2);
+                mensaje = Encoding.ASCII.GetString(msg2).Split('\0')[0];
+                MessageBox.Show("La temperatura de " + numeroBox.Text + "ºC es " + mensaje + " F");
+            }
+            else if (aCentigrados.Checked)
+            {
+                // Enviamos nombre y altura
+                string mensaje = "5/" + numeroBox.Text;
+                // Enviamos al servidor el nombre tecleado
+                byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
+                server.Send(msg);
+
+                //Recibimos la respuesta del servidor
+                byte[] msg2 = new byte[80];
+                server.Receive(msg2);
+                mensaje = Encoding.ASCII.GetString(msg2).Split('\0')[0];
+                MessageBox.Show("La temperatura de " + numeroBox.Text + "F es " + mensaje + " ºC");
+            }
+            else  //if (PalabraPalindromo.Checked)
+            {
+                // Enviamos nombre y altura
+                string mensaje = "6/" + palabra_box.Text;
+                // Enviamos al servidor el nombre tecleado
+                byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
+                server.Send(msg);
+
+                //Recibimos la respuesta del servidor
+                byte[] msg2 = new byte[80];
+                server.Receive(msg2);
+                mensaje = Encoding.ASCII.GetString(msg2).Split('\0')[0];
+                MessageBox.Show("La palabra " + palabra_box.Text+ " " + mensaje + " es palindroma.");
+
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -97,3 +97,12 @@ F:\Julio2018\Docencia\SO\2021-2022Q2\EjercicioGuiaEnGitHub\AplicacionConConexion
 F:\Julio2018\Docencia\SO\2021-2022Q2\EjercicioGuiaEnGitHub\AplicacionConConexionDesconexion\cliente_con_conexion_desconexion\WindowsFormsApplication1\obj\Debug\clienteForm.csproj.CoreCompileInputs.cache
 F:\Julio2018\Docencia\SO\2021-2022Q2\EjercicioGuiaEnGitHub\AplicacionConConexionDesconexion\cliente_con_conexion_desconexion\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 F:\Julio2018\Docencia\SO\2021-2022Q2\EjercicioGuiaEnGitHub\AplicacionConConexionDesconexion\cliente_con_conexion_desconexion\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\vigam\OneDrive\Desktop\Universitat\3A\SO\ProyectoGuia\MiEjercicioGuia\clienteEjercicioGuia\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\vigam\OneDrive\Desktop\Universitat\3A\SO\ProyectoGuia\MiEjercicioGuia\clienteEjercicioGuia\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\vigam\OneDrive\Desktop\Universitat\3A\SO\ProyectoGuia\MiEjercicioGuia\clienteEjercicioGuia\WindowsFormsApplication1\obj\Debug\clienteForm.csprojAssemblyReference.cache
+C:\Users\vigam\OneDrive\Desktop\Universitat\3A\SO\ProyectoGuia\MiEjercicioGuia\clienteEjercicioGuia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\vigam\OneDrive\Desktop\Universitat\3A\SO\ProyectoGuia\MiEjercicioGuia\clienteEjercicioGuia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\vigam\OneDrive\Desktop\Universitat\3A\SO\ProyectoGuia\MiEjercicioGuia\clienteEjercicioGuia\WindowsFormsApplication1\obj\Debug\clienteForm.csproj.GenerateResource.cache
+C:\Users\vigam\OneDrive\Desktop\Universitat\3A\SO\ProyectoGuia\MiEjercicioGuia\clienteEjercicioGuia\WindowsFormsApplication1\obj\Debug\clienteForm.csproj.CoreCompileInputs.cache
+C:\Users\vigam\OneDrive\Desktop\Universitat\3A\SO\ProyectoGuia\MiEjercicioGuia\clienteEjercicioGuia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\vigam\OneDrive\Desktop\Universitat\3A\SO\ProyectoGuia\MiEjercicioGuia\clienteEjercicioGuia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb

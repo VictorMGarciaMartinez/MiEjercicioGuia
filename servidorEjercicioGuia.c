@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	//htonl formatea el numero que recibe al formato necesario
 	serv_adr.sin_addr.s_addr = htonl(INADDR_ANY);
 	// establecemos el puerto de escucha
-	serv_adr.sin_port = htons(9000);
+	serv_adr.sin_port = htons(9050);
 	if (bind(sock_listen, (struct sockaddr *) &serv_adr, sizeof(serv_adr)) < 0)
 		printf ("Error al bind");
 	
@@ -86,15 +86,45 @@ int main(int argc, char *argv[])
 				strcpy (respuesta,"SI");
 				else
 					strcpy (respuesta,"NO");
-			else //quiere saber si es alto
-			{
+			else if (codigo == 3)
+			{	//quiere saber si es alto
+			
 				p = strtok( NULL, "/");
 				float altura =  atof (p);
 				if (altura > 1.70)
-					sprintf (respuesta, "%s: eres alto",nombre);
+					sprintf (respuesta, "%s: eres alto/a",nombre);
 				else
-					sprintf (respuesta, "%s: eresbajo",nombre);
+					sprintf (respuesta, "%s: eres bajo/a",nombre);
 			}
+			else if (codigo == 4)
+			{	//de Cent a F
+				temperatura =((atof(p)*9)/5) + 32 ;
+				sprintf (respuesta,"%f", temperatura);
+			}
+			else if (codigo == 5)	
+			{	//de F a Cent
+				temperatura = ((atof(p) - 32)*5)/9;
+				sprintf (respuesta,"%f", temperatura);
+			}
+			else //codigo == 6
+			{	// es palindromo
+				strcpy (nombre, p); // sera una palabra
+				int longitud = strlen(nombre);
+				if (longitud <= 1)
+					strcpy (respuesta,"SI");
+				int inicio = 0;
+				int fin = longitud -1;
+				while (nombre[inicio]== nombre[fin])
+				{
+					if (inicio >= fin)
+						strcpy (respuesta,"SI");
+					inicio ++;
+					fin --;
+				}
+				if (strcmp(respuesta, "SI")!=0)
+					strcpy (respuesta,"NO");
+			}	
+
 				
 			if (codigo !=0)
 			{
