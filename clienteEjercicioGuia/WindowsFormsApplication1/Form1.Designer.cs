@@ -43,6 +43,8 @@
             this.numeroBox = new System.Windows.Forms.TextBox();
             this.Bonito = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
+            this.dameServiciosRealizadosBtn = new System.Windows.Forms.Button();
+            this.serviciosLbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -226,11 +228,32 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // dameServiciosRealizadosBtn
+            // 
+            this.dameServiciosRealizadosBtn.Location = new System.Drawing.Point(589, 114);
+            this.dameServiciosRealizadosBtn.Name = "dameServiciosRealizadosBtn";
+            this.dameServiciosRealizadosBtn.Size = new System.Drawing.Size(90, 52);
+            this.dameServiciosRealizadosBtn.TabIndex = 11;
+            this.dameServiciosRealizadosBtn.Text = "Servicios Realizados: ";
+            this.dameServiciosRealizadosBtn.UseVisualStyleBackColor = true;
+            this.dameServiciosRealizadosBtn.Click += new System.EventHandler(this.dameServiciosRealizadosBtn_Click);
+            // 
+            // serviciosLbl
+            // 
+            this.serviciosLbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.serviciosLbl.Location = new System.Drawing.Point(685, 114);
+            this.serviciosLbl.Name = "serviciosLbl";
+            this.serviciosLbl.Size = new System.Drawing.Size(135, 52);
+            this.serviciosLbl.TabIndex = 12;
+            this.serviciosLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 692);
+            this.Controls.Add(this.serviciosLbl);
+            this.Controls.Add(this.dameServiciosRealizadosBtn);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -261,6 +284,8 @@
         private System.Windows.Forms.RadioButton aCentigrados;
         private System.Windows.Forms.RadioButton aFahrenheit;
         private System.Windows.Forms.RadioButton ConvertirMayus;
+        private System.Windows.Forms.Button dameServiciosRealizadosBtn;
+        private System.Windows.Forms.Label serviciosLbl;
     }
 }
 

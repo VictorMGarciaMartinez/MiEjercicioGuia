@@ -8,6 +8,9 @@
 #include <ctype.h>
 #include <pthread.h>
 
+int contadorServicios;
+//Estructura para el acceso excluyente
+/*pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;*/
 
 
 void *AtenderCliente (void *socket)
@@ -41,7 +44,7 @@ void *AtenderCliente (void *socket)
 		// Ya tenemos el c?digo de la petici?n
 		char nombre[20];
 		float temperatura;
-		if (codigo !=0)
+		if ((codigo !=0)&&(codigo != 8))
 		{
 			p = strtok( NULL, "/");
 
@@ -103,7 +106,7 @@ void *AtenderCliente (void *socket)
 			if (strcmp(respuesta, "SI")!=0)
 				strcpy (respuesta,"NO");
 		}
-		else //codigo == 7
+		else if (codigo == 7)
 		{	//convertir palabra a mayusculas
 			strcpy (nombre, p); // sera una palabra
 			for (int i = 0;i<strlen(nombre); ++i)
@@ -112,6 +115,16 @@ void *AtenderCliente (void *socket)
 			}
 			sprintf (respuesta,"%s", nombre);
 			
+		}
+		else // codigo == 8
+			// queremos saber el numero de servicios realizados
+			sprintf (respuesta, "%d", contadorServicios);
+		
+		if((codigo==1)||(codigo==2)||(codigo==3)||(codigo==4)||(codigo==5)||(codigo==7))
+		{
+			//pthread_mutex_lock (&mutex);
+			contadorServicios = contadorServicios+1;
+			//pthread_mutex_unlock (&mutex);
 		}
 		if (codigo !=0)
 		{
@@ -153,6 +166,7 @@ int main(int argc, char *argv[])
 	if (listen(sock_listen, 3) < 0)
 		printf("Error en el Listen\n");
 	
+	contadorServicios = 0;
 	int i;
 	int sockets[100];
 	pthread_t thread; //donde se guardan los ID de los sockets
@@ -165,7 +179,7 @@ int main(int argc, char *argv[])
 		//sock_conn es el socket que usaremos para este cliente
 		sockets[i] = sock_conn;
 		// Creamos thread y le decimos lo que tiene que hacer
-		pthread_create (&thread, NULL, AtenderCliente, &sockets[i]);
+		pthread_create (&thread, NULL, AtenderCliente, &sockets[i]);		
 		i=i+1;
 		}		
 	// Bucle para hacer que el servidor se espere a que acabe de todos los clientes.
@@ -173,5 +187,3 @@ int main(int argc, char *argv[])
 		pthread_join (thread[i], NULL);
 	*/
 }
-
-			
