@@ -10,7 +10,7 @@
 
 int contadorServicios;
 //Estructura para el acceso excluyente
-/*pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;*/
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
 
 void *AtenderCliente (void *socket)
@@ -122,9 +122,9 @@ void *AtenderCliente (void *socket)
 		
 		if((codigo==1)||(codigo==2)||(codigo==3)||(codigo==4)||(codigo==5)||(codigo==7))
 		{
-			//pthread_mutex_lock (&mutex);
+			pthread_mutex_lock (&mutex);
 			contadorServicios = contadorServicios+1;
-			//pthread_mutex_unlock (&mutex);
+			pthread_mutex_unlock (&mutex);
 		}
 		if (codigo !=0)
 		{
