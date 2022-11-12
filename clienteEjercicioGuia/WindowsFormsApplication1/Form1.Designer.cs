@@ -39,11 +39,8 @@
             this.aFahrenheit = new System.Windows.Forms.RadioButton();
             this.Longitud = new System.Windows.Forms.RadioButton();
             this.altura = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numeroBox = new System.Windows.Forms.TextBox();
             this.Bonito = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
-            this.dameServiciosRealizadosBtn = new System.Windows.Forms.Button();
             this.serviciosLbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -55,9 +52,9 @@
             this.label2.Location = new System.Drawing.Point(31, 31);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 31);
+            this.label2.Size = new System.Drawing.Size(90, 31);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Palabra";
+            this.label2.Text = "Texto:";
             // 
             // palabra_box
             // 
@@ -99,8 +96,6 @@
             this.groupBox1.Controls.Add(this.aFahrenheit);
             this.groupBox1.Controls.Add(this.Longitud);
             this.groupBox1.Controls.Add(this.altura);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.numeroBox);
             this.groupBox1.Controls.Add(this.Bonito);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.button2);
@@ -186,24 +181,6 @@
             this.altura.Text = "Dime si soy alto";
             this.altura.UseVisualStyleBackColor = true;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 112);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 17);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Número";
-            // 
-            // numeroBox
-            // 
-            this.numeroBox.Location = new System.Drawing.Point(20, 135);
-            this.numeroBox.Margin = new System.Windows.Forms.Padding(4);
-            this.numeroBox.Name = "numeroBox";
-            this.numeroBox.Size = new System.Drawing.Size(81, 22);
-            this.numeroBox.TabIndex = 9;
-            // 
             // Bonito
             // 
             this.Bonito.AutoSize = true;
@@ -228,16 +205,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // dameServiciosRealizadosBtn
-            // 
-            this.dameServiciosRealizadosBtn.Location = new System.Drawing.Point(589, 114);
-            this.dameServiciosRealizadosBtn.Name = "dameServiciosRealizadosBtn";
-            this.dameServiciosRealizadosBtn.Size = new System.Drawing.Size(90, 52);
-            this.dameServiciosRealizadosBtn.TabIndex = 11;
-            this.dameServiciosRealizadosBtn.Text = "Servicios Realizados: ";
-            this.dameServiciosRealizadosBtn.UseVisualStyleBackColor = true;
-            this.dameServiciosRealizadosBtn.Click += new System.EventHandler(this.dameServiciosRealizadosBtn_Click);
-            // 
             // serviciosLbl
             // 
             this.serviciosLbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -253,7 +220,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 692);
             this.Controls.Add(this.serviciosLbl);
-            this.Controls.Add(this.dameServiciosRealizadosBtn);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -277,14 +243,11 @@
         private System.Windows.Forms.RadioButton Longitud;
         private System.Windows.Forms.RadioButton Bonito;
         private System.Windows.Forms.RadioButton altura;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox numeroBox;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.RadioButton PalabraPalindromo;
         private System.Windows.Forms.RadioButton aCentigrados;
         private System.Windows.Forms.RadioButton aFahrenheit;
         private System.Windows.Forms.RadioButton ConvertirMayus;
-        private System.Windows.Forms.Button dameServiciosRealizadosBtn;
         private System.Windows.Forms.Label serviciosLbl;
     }
 }
